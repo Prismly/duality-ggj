@@ -4,25 +4,41 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Rigidbody2D rigidbody;
+
+    [SerializeField]
+    public float pSpeed;
+    [SerializeField]
+    public float jumpVel;
+    [SerializeField]
+    public float decelarationConst;
+    public bool isAirborne = false;
+
     KeyCode left = KeyCode.LeftArrow;
     KeyCode right = KeyCode.RightArrow;
-    float pSpeed = 5f;
-
-    Rigidbody2D myRigidbody;
 
     private void Awake()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horVel = 0;
+
         if (Input.GetKey(left))
-            horVel -= pSpeed;
+            rigidbody.velocity -= new Vector2(pSpeed, 0) * Time.deltaTime;
         if (Input.GetKey(right))
-            horVel += pSpeed;
-        myRigidbody.velocity = new Vector3(horVel, myRigidbody.velocity.y, 0); ;
+            rigidbody.velocity += new Vector2(pSpeed, 0) * Time.deltaTime;
+  
+        if(rigidbody.velocity.x > 0 && !Input.GetKey(right))
+            rigidbody.velocity -= new Vector2(decelarationConst, 0) * Time.deltaTime;
+        if (rigidbody.velocity.x < 0 && !Input.GetKey(left))
+            rigidbody.velocity += new Vector2(decelarationConst, 0) * Time.deltaTime;
+
+        if(!isAirborne && Input.GetButtonDown("Jump")) {
+            rigidbody.velocity += Vector2.up * jumpVel;
+            isAirborne = true;
+        }
     }
 }
