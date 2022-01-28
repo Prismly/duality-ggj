@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     KeyCode left = KeyCode.LeftArrow;
     KeyCode right = KeyCode.RightArrow;
     KeyCode jump = KeyCode.UpArrow;
+    KeyCode transform = KeyCode.DownArrow;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     {
         HorMovement();
         VerMovement();
+        Transformation();
     }
 
     void HorMovement()
@@ -34,9 +36,15 @@ public class Player : MonoBehaviour
         float xVel = rigidbody.velocity.x;
 
         if (Input.GetKey(left))
+        {
             xVel -= accelFactor * Time.deltaTime;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         if (Input.GetKey(right))
+        {
             xVel += accelFactor * Time.deltaTime;
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
 
         if (!Input.GetKey(left) && !Input.GetKey(right))
         {
@@ -64,5 +72,17 @@ public class Player : MonoBehaviour
             rigidbody.gravityScale = lowGrav;
         else
             rigidbody.gravityScale = highGrav;
+    }
+
+    public void Transformation()
+    {
+        if (Input.GetKeyDown(transform))
+        {
+            //CharacterManager.TransformCharacter(this);
+        }
+        if (Input.GetKeyUp(transform))
+        {
+
+        }
     }
 }
