@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float jumpVel, lowGrav, highGrav;
     [SerializeField]
     public float speedCap, accelFactor, decelFactor;
+    [SerializeField]
+    public GameObject spriteObject;
 
     public bool isAirborne = true;
 
@@ -37,12 +39,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(leftKey))
         {
             xVel -= accelFactor * Time.deltaTime;
-            GetComponent<SpriteRenderer>().flipX = true;
+            spriteObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
-            GetComponent<SpriteRenderer>().flipX = false;
+            spriteObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))

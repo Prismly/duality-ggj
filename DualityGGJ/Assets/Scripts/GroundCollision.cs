@@ -10,7 +10,7 @@ public class GroundCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Ground") {
-            Debug.Log("landed");
+            //Debug.Log("landed");
             Player.GetComponent<Player>().isAirborne = false;
         }
     }
@@ -19,7 +19,7 @@ public class GroundCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            Debug.Log("left the ground");
+            //Debug.Log("left the ground");
             Player.GetComponent<Player>().isAirborne = true;
         }
     }

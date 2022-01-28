@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 531275609}
   - component: {fileID: 531275611}
   - component: {fileID: 531275610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1379,9 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc1b6363163cb14d902727749353455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dua: {fileID: 0}
-  lity: {fileID: 0}
-  ball: {fileID: 0}
 --- !u!4 &980291936
 Transform:
   m_ObjectHideFlags: 0
@@ -1395,69 +1392,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1517778131369825601
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1517778132236012007, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_Name
-      value: Lity (White)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012007, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517778132236012013, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
 --- !u!1001 &2094124527846247205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1465,6 +1401,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1231847403802057096, guid: 72136d093059fe541bc653fac8719a29, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231847403802057096, guid: 72136d093059fe541bc653fac8719a29, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 67241939
+      objectReference: {fileID: 0}
     - target: {fileID: 2094124527018579509, guid: 72136d093059fe541bc653fac8719a29, type: 3}
       propertyPath: m_Name
       value: Dua (Black)
