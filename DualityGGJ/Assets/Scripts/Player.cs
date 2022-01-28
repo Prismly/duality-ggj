@@ -18,9 +18,12 @@ public class Player : MonoBehaviour
     protected KeyCode jumpKey = KeyCode.UpArrow;
     protected KeyCode transformKey = KeyCode.Space;
 
+    protected static CameraController cameraController;
+
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        cameraController = Camera.main.gameObject.GetComponent<CameraController>();
     }
 
     // Update is called once per frame

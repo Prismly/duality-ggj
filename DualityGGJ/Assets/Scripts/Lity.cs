@@ -13,6 +13,7 @@ public class Lity : Player
         {
             GameObject newForm = Instantiate(ballForm);
             newForm.transform.position = transform.position;
+            cameraController.player = newForm.transform;
             newForm.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
             newForm.GetComponent<Ball>().isDua = true;
             Destroy(gameObject);

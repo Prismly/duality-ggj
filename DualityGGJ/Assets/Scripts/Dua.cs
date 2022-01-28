@@ -13,6 +13,7 @@ public class Dua : Player
         {
             GameObject newForm = Instantiate(ballForm);
             newForm.transform.position = transform.position;
+            cameraController.player = newForm.transform;
             newForm.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
             newForm.GetComponent<Ball>().isDua = false;
             Destroy(gameObject);

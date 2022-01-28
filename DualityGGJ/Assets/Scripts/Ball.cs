@@ -15,6 +15,7 @@ public class Ball : Player
             GameObject newForm = isDua ? Instantiate(duaForm) : Instantiate(lityForm);
             newForm.transform.position = transform.position;
             newForm.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+            cameraController.player = newForm.transform;
             Destroy(gameObject);
         }
     }
