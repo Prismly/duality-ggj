@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2094124527018579511}
   - component: {fileID: 2094124527018579516}
-  - component: {fileID: 2094124527018579510}
+  - component: {fileID: 5527132785244263468}
   - component: {fileID: 2094124527018579505}
   - component: {fileID: 2094124527018579517}
   m_Layer: 0
@@ -81,14 +81,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
+  m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2094124527018579510
+--- !u!114 &5527132785244263468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2094124527018579509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07d9717154196a4b98a1e11e7d45338, type: 3}
+  m_Script: {fileID: 11500000, guid: eb64bd24bebdf55429255eca0906d549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpVel: 7
@@ -106,7 +106,8 @@ MonoBehaviour:
   speedCap: 15
   accelFactor: 50
   decelFactor: 30
-  isAirborne: 0
+  isAirborne: 1
+  ballForm: {fileID: 2576369470125620439, guid: f33bda9b2149f2646b1cbb425571b53d, type: 3}
 --- !u!50 &2094124527018579505
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +149,7 @@ BoxCollider2D:
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 1
+    drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2

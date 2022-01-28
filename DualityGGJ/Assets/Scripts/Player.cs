@@ -13,10 +13,10 @@ public class Player : MonoBehaviour
 
     public bool isAirborne = true;
 
-    KeyCode left = KeyCode.LeftArrow;
-    KeyCode right = KeyCode.RightArrow;
-    KeyCode jump = KeyCode.UpArrow;
-    KeyCode transform = KeyCode.DownArrow;
+    protected KeyCode leftKey = KeyCode.LeftArrow;
+    protected KeyCode rightKey = KeyCode.RightArrow;
+    protected KeyCode jumpKey = KeyCode.UpArrow;
+    protected KeyCode transformKey = KeyCode.Space;
 
     private void Awake()
     {
@@ -26,27 +26,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HorMovement();
-        VerMovement();
-        Transformation();
+        InputChecks();
     }
 
-    void HorMovement()
+    void InputChecks()
     {
+        //HORIZONTAL MOVEMENT
         float xVel = rigidbody.velocity.x;
 
-        if (Input.GetKey(left))
+        if (Input.GetKey(leftKey))
         {
             xVel -= accelFactor * Time.deltaTime;
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        if (Input.GetKey(right))
+        if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if (!Input.GetKey(left) && !Input.GetKey(right))
+        if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
         {
             if (xVel > 0.01f)
                 xVel -= decelFactor * Time.deltaTime;
@@ -55,14 +54,11 @@ public class Player : MonoBehaviour
         }
 
         xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
-
-        //Debug.Log(xVel);
         rigidbody.velocity = new Vector2(xVel, rigidbody.velocity.y);
-    }
 
-    void VerMovement()
-    {
-        if (!isAirborne && Input.GetKeyDown(jump))
+
+        //VERTICAL MOVEMENT
+        if (!isAirborne && Input.GetKeyDown(jumpKey))
         {
             rigidbody.velocity += Vector2.up * jumpVel;
             isAirborne = true;
@@ -72,17 +68,14 @@ public class Player : MonoBehaviour
             rigidbody.gravityScale = lowGrav;
         else
             rigidbody.gravityScale = highGrav;
+
+
+        //TRANSFORMATION
+        TransformCheck();
     }
 
-    public void Transformation()
+    public virtual void TransformCheck()
     {
-        if (Input.GetKeyDown(transform))
-        {
-            //CharacterManager.TransformCharacter(this);
-        }
-        if (Input.GetKeyUp(transform))
-        {
-
-        }
+        //Implemented in child classes
     }
 }
