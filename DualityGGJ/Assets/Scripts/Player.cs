@@ -7,13 +7,20 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     [SerializeField]
-    public float jumpVel, lowGrav, highGrav;
+    public float wallJumpVel, jumpVel, upGrav, downGrav, wallDownGrav;
     [SerializeField]
     public float speedCap, accelFactor, decelFactor;
     [SerializeField]
     public GameObject spriteObject;
 
     public bool isAirborne = true;
+    public WallState isWallborne = WallState.NOT_WALLBORNE;
+    public enum WallState
+    {
+        NOT_WALLBORNE,
+        WALLBORNE_L,
+        WALLBORNE_R
+    }
 
     protected KeyCode leftKey = KeyCode.LeftArrow;
     protected KeyCode rightKey = KeyCode.RightArrow;
@@ -57,29 +64,47 @@ public class Player : MonoBehaviour
             spriteObject.GetComponent<Animator>().SetBool("KeyDown", false);
         }
 
-        //if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
-        //{
-        //    if (xVel > 0.01f)
-        //        xVel -= decelFactor * Time.deltaTime;
-        //    if (xVel < -0.01f)
-        //        xVel += decelFactor * Time.deltaTime;
-        //}
+        if (!isAirborne && !Input.GetKey(leftKey) && !Input.GetKey(rightKey))
+        {
+            if (xVel > 0.01f)
+                xVel -= decelFactor * Time.deltaTime;
+            if (xVel < -0.01f)
+                xVel += decelFactor * Time.deltaTime;
+        }
 
         xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
         rigidbody.velocity = new Vector2(xVel, rigidbody.velocity.y);
 
 
         //VERTICAL MOVEMENT
-        if (!isAirborne && Input.GetKeyDown(jumpKey))
+        if ((!isAirborne || isWallborne != WallState.NOT_WALLBORNE) && Input.GetKeyDown(jumpKey))
         {
+            //Player is either grounded OR on a wall and jumps
             rigidbody.velocity += Vector2.up * jumpVel;
             isAirborne = true;
         }
 
+        if (isWallborne != WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
+        {
+            if (isWallborne == WallState.WALLBORNE_L)
+            {
+                Debug.Log("jompright");
+                rigidbody.velocity += Vector2.right * wallJumpVel;
+            }
+            else
+            {
+                Debug.Log("jompleft");
+                rigidbody.velocity += Vector2.left * wallJumpVel;
+            }
+            isWallborne = WallState.NOT_WALLBORNE;
+        }
+
         if (rigidbody.velocity.y > 0)
-            rigidbody.gravityScale = lowGrav;
+            rigidbody.gravityScale = upGrav;
+        else if (isWallborne == WallState.NOT_WALLBORNE)
+            rigidbody.gravityScale = downGrav;
         else
-            rigidbody.gravityScale = highGrav;
+            rigidbody.gravityScale = wallDownGrav;
 
 
         //TRANSFORMATION

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class GroundCollision : MonoBehaviour
 {
-
     [SerializeField]
-    GameObject Player;
+    GameObject player;
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Ground") {
             //Debug.Log("landed");
-            Player.GetComponent<Player>().isAirborne = false;
+            player.GetComponent<Player>().isAirborne = false;
         }
     }
 
@@ -20,7 +19,7 @@ public class GroundCollision : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             //Debug.Log("left the ground");
-            Player.GetComponent<Player>().isAirborne = true;
+            player.GetComponent<Player>().isAirborne = true;
         }
     }
 }
