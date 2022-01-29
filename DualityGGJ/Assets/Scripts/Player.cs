@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
         if (!isAirborne && Input.GetKeyDown(jumpKey))
         {
             rigidbody.velocity += Vector2.up * jumpVel;
+            PlayJump();
             isAirborne = true;
         }
 
@@ -81,13 +82,16 @@ public class Player : MonoBehaviour
         else
             rigidbody.gravityScale = highGrav;
 
-
         //TRANSFORMATION
         TransformCheck();
     }
 
     public virtual void TransformCheck()
     {
+        //Implemented in child classes
+    }
+
+    public virtual void PlayJump() {
         //Implemented in child classes
     }
 }

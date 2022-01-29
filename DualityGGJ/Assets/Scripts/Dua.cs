@@ -19,4 +19,8 @@ public class Dua : Player
             Destroy(gameObject);
         }
     }
+
+    public override void PlayJump() {
+        spriteObject.GetComponent<Animator>().Play("Dua_Jump");
+    }
 }

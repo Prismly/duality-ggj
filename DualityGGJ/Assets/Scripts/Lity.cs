@@ -19,4 +19,8 @@ public class Lity : Player
             Destroy(gameObject);
         }
     }
+
+    public override void PlayJump() {
+        spriteObject.GetComponent<Animator>().Play("Lity_Jump");
+    }
 }
