@@ -44,11 +44,17 @@ public class Player : MonoBehaviour
         {
             xVel -= accelFactor * Time.deltaTime;
             spriteObject.GetComponent<SpriteRenderer>().flipX = true;
+            gameObject.GetComponent<Animator>().SetBool("KeyDown", true);
         }
         if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
             spriteObject.GetComponent<SpriteRenderer>().flipX = false;
+            gameObject.GetComponent<Animator>().SetBool("KeyDown", true);
+        }
+        if(!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
+        {
+            gameObject.GetComponent<Animator>().SetBool("KeyDown", false);
         }
 
         //if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
