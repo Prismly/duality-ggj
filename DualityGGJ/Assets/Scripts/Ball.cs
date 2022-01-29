@@ -10,32 +10,31 @@ public class Ball : Player
     GameObject explodeFX;
     public bool isDua;
 
+    [SerializeField]
+    public float explosiveForce;
+
     public override void TransformCheck()
     {
         if (Input.GetKeyUp(transformKey))
         {
             GameObject newForm = isDua ? Instantiate(duaForm) : Instantiate(lityForm);
-            Vector2 explodedVelocity = GetComponent<Rigidbody2D>().velocity;
+            newForm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
+            Vector2 explodedVelocity = GetComponent<Rigidbody2D>().velocity;
             
             GameObject fx = Instantiate(explodeFX);
             fx.transform.position = newForm.transform.position;
-            
-            int[8] checks1 = []
 
-            for(int i = 0; i < 360; i += 45)
+            int[] checksX = { -1, 0, 1, -1, 1, -1, 0, 1 };
+            int[] checksY = { 1, 1, 1, 0, 0, -1, -1, -1 };
+
+            for(int i = 0; i < 8; i++)
             {
-                Debug.Log(Mathf.Cos(i));
-                Vector2 direction = new Vector2(Mathf.Cos(i), Mathf.Sin(i));
+                Vector2 direction = new Vector2(checksX[i], checksY[i]);
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2f, LayerMask.GetMask("Ground"));
-                //Debug.Log(direction);
-                if (hit.collider == null)
+                if (hit.collider != null)
                 {
-                    //Debug.Log("no hit");
-                }
-                else
-                {
-                    //Debug.Log("hit");
+                    newForm.GetComponent<Rigidbody2D>().velocity += direction * explosiveForce;
                 }
             }
 
