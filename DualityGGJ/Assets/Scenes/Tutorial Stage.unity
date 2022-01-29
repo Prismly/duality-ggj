@@ -415,36 +415,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &904962099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2094124527018579509, guid: 72136d093059fe541bc653fac8719a29, type: 3}
-  m_PrefabInstance: {fileID: 1340174815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &915202054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2094124527018579511, guid: 72136d093059fe541bc653fac8719a29, type: 3}
   m_PrefabInstance: {fileID: 1340174815}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &915202055
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904962099}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ad2851d233c7df43940cd26d7380e02, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1119411139
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255, y: 172}
+  m_AnchoredPosition: {x: 302, y: 195}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119411141
@@ -1803,11 +1778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094124527018579511, guid: 72136d093059fe541bc653fac8719a29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.44
+      value: -8.56
       objectReference: {fileID: 0}
     - target: {fileID: 2094124527018579511, guid: 72136d093059fe541bc653fac8719a29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.37
+      value: -2.72
       objectReference: {fileID: 0}
     - target: {fileID: 2094124527018579511, guid: 72136d093059fe541bc653fac8719a29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1852,7 +1827,11 @@ PrefabInstance:
     - target: {fileID: 5527132785244263468, guid: 72136d093059fe541bc653fac8719a29, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 915202055}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527132785244263468, guid: 72136d093059fe541bc653fac8719a29, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 2060837413}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72136d093059fe541bc653fac8719a29, type: 3}
 --- !u!1 &1458106214
