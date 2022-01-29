@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1747670631623361996}
   - component: {fileID: 4865581924479534054}
   - component: {fileID: 2772112718714061623}
+  - component: {fileID: 7874751756413473459}
   m_Layer: 0
   m_Name: Ball (Both)
   m_TagString: Untagged
@@ -106,6 +107,7 @@ MonoBehaviour:
   accelFactor: 50
   decelFactor: 30
   isAirborne: 1
+  anim: {fileID: 0}
   duaForm: {fileID: 2094124527018579509, guid: 72136d093059fe541bc653fac8719a29, type: 3}
   lityForm: {fileID: 1517778132236012007, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
   isDua: 1
@@ -156,3 +158,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50411546, y: 0.49943727}
   m_EdgeRadius: 0
+--- !u!95 &7874751756413473459
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576369470125620439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5103aa80e85e3094488411166ae9657a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

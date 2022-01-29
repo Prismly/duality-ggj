@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     protected KeyCode transformKey = KeyCode.Space;
 
     protected static CameraController cameraController;
+    
+    [SerializeField]
+    protected Animator anim;
 
     private void Awake()
     {
@@ -34,6 +37,8 @@ public class Player : MonoBehaviour
 
     void InputChecks()
     {
+        anim = gameObject.GetComponent<Animator>();
+        
         //HORIZONTAL MOVEMENT
         float xVel = rigidbody.velocity.x;
 
@@ -41,11 +46,13 @@ public class Player : MonoBehaviour
         {
             xVel -= accelFactor * Time.deltaTime;
             GetComponent<SpriteRenderer>().flipX = true;
+            anim.SetBool("KeyDown", true);
         }
         if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
             GetComponent<SpriteRenderer>().flipX = false;
+            anim.SetBool("KeyDown", true);
         }
 
         if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
@@ -54,6 +61,7 @@ public class Player : MonoBehaviour
                 xVel -= decelFactor * Time.deltaTime;
             if (xVel < -0.01f)
                 xVel += decelFactor * Time.deltaTime;
+                anim.SetBool("KeyDown", false);
         }
 
         xVel = Mathf.Clamp(xVel, -speedCap, speedCap);

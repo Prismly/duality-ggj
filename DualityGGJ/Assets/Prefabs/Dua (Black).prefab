@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5527132785244263468}
   - component: {fileID: 2094124527018579505}
   - component: {fileID: 2094124527018579517}
+  - component: {fileID: 1343729276408593816}
   m_Layer: 0
   m_Name: Dua (Black)
   m_TagString: Untagged
@@ -107,6 +108,7 @@ MonoBehaviour:
   accelFactor: 50
   decelFactor: 30
   isAirborne: 1
+  anim: {fileID: 0}
   ballForm: {fileID: 2576369470125620439, guid: f33bda9b2149f2646b1cbb425571b53d, type: 3}
 --- !u!50 &2094124527018579505
 Rigidbody2D:
@@ -155,6 +157,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7518723, y: 0.6890204}
   m_EdgeRadius: 0
+--- !u!95 &1343729276408593816
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094124527018579509}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ad2851d233c7df43940cd26d7380e02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2094124528157260318
 GameObject:
   m_ObjectHideFlags: 0
