@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpVel: 7
   lowGrav: 1
-  highGrav: 2
+  highGrav: 2.5
   speedCap: 15
   accelFactor: 50
   decelFactor: 30

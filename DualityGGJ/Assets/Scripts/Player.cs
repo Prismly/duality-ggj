@@ -47,13 +47,13 @@ public class Player : MonoBehaviour
             spriteObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
-        {
-            if (xVel > 0.01f)
-                xVel -= decelFactor * Time.deltaTime;
-            if (xVel < -0.01f)
-                xVel += decelFactor * Time.deltaTime;
-        }
+        //if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
+        //{
+        //    if (xVel > 0.01f)
+        //        xVel -= decelFactor * Time.deltaTime;
+        //    if (xVel < -0.01f)
+        //        xVel += decelFactor * Time.deltaTime;
+        //}
 
         xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
         rigidbody.velocity = new Vector2(xVel, rigidbody.velocity.y);

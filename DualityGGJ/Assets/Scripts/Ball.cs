@@ -11,7 +11,7 @@ public class Ball : Player
     public bool isDua;
 
     [SerializeField]
-    public float explosiveForce;
+    public float explosiveForce, explosionRadius;
 
     public override void TransformCheck()
     {
@@ -19,11 +19,9 @@ public class Ball : Player
         {
             GameObject newForm = isDua ? Instantiate(duaForm) : Instantiate(lityForm);
             newForm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-            Vector2 explodedVelocity = GetComponent<Rigidbody2D>().velocity;
             
-            GameObject fx = Instantiate(explodeFX);
-            fx.transform.position = newForm.transform.position;
+            //GameObject fx = Instantiate(explodeFX);
+            //fx.transform.position = newForm.transform.position;
 
             int[] checksX = { -1, 0, 1, -1, 1, -1, 0, 1 };
             int[] checksY = { 1, 1, 1, 0, 0, -1, -1, -1 };
@@ -31,15 +29,16 @@ public class Ball : Player
             for(int i = 0; i < 8; i++)
             {
                 Vector2 direction = new Vector2(checksX[i], checksY[i]);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2f, LayerMask.GetMask("Ground"));
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, explosionRadius, LayerMask.GetMask("Ground"));
                 if (hit.collider != null)
                 {
-                    newForm.GetComponent<Rigidbody2D>().velocity += direction * explosiveForce;
+                    Debug.Log(-direction);
+                    newForm.GetComponent<Rigidbody2D>().velocity += -direction * explosiveForce;
                 }
             }
 
             newForm.transform.position = transform.position;
-            newForm.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+            newForm.GetComponent<Rigidbody2D>().velocity += GetComponent<Rigidbody2D>().velocity;
             Destroy(gameObject);
         }
     }
