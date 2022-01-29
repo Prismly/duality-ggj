@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,7 +34,7 @@ public class Timer : MonoBehaviour
     private void onTimerStop() {
         timerActive = false;
         levelComplete.enabled = true;
-        
+
         if(time < bronzeTime) {
             bronze.enabled = true;
         }
@@ -58,6 +59,6 @@ public class Timer : MonoBehaviour
         int seconds = (int) (time % 60);
         int milliseconds = (int) ((time % 1) * 1000);
 
-        return minutes + ":" + seconds + "." + milliseconds;
+        return String.Format("{0:D2}:{1:D2}.{2:D3}", minutes, seconds, milliseconds);
     }
 }
