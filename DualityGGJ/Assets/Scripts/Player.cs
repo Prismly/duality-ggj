@@ -98,26 +98,11 @@ public class Player : MonoBehaviour
 
     public virtual void JumpCheck(ref float xVel, ref float yVel)
     {
-        if ((!isAirborne || isWallborne != WallState.NOT_WALLBORNE) && Input.GetKeyDown(jumpKey))
+        if (!isAirborne && Input.GetKeyDown(jumpKey))
         {
             //Player is either grounded OR on a wall and jumps
             yVel += jumpVel;
             isAirborne = true;
-        }
-
-        if (isWallborne != WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
-        {
-            if (isWallborne == WallState.WALLBORNE_L)
-            {
-                Debug.Log("jompright");
-                xVel += wallJumpVel;
-            }
-            else
-            {
-                Debug.Log("jompleft");
-                xVel -= wallJumpVel;
-            }
-            isWallborne = WallState.NOT_WALLBORNE;
         }
     }
 
