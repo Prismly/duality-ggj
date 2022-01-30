@@ -9,7 +9,7 @@ public class GroundCollision : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.tag == "Ground") {
-            player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", false);
+            //player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", false);
             player.GetComponent<Player>().isAirborne = false;
         }
     }
@@ -18,7 +18,7 @@ public class GroundCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", true);
+            //player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", true);
             player.GetComponent<Player>().isAirborne = true;
         }
     }

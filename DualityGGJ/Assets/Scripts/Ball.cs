@@ -29,7 +29,7 @@ public class Ball : Player
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, explosionRadius, LayerMask.GetMask("Ground"));
                 if (hit.collider != null)
                 {
-                    Debug.Log(-direction);
+                    //Debug.Log(-direction);
                     newForm.GetComponent<Rigidbody2D>().velocity += -direction * explosiveForce;
                 }
             }

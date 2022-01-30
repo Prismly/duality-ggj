@@ -6,12 +6,20 @@ public class Lity : Player
 {
     [SerializeField]
     GameObject ballForm;
-    static bool canDoubleJump = false;
+    static bool canDoubleJump = true;
+
+    private void Start()
+    {
+        spriteObject.GetComponent<Animator>().SetBool("Can Double Jump", canDoubleJump);
+    }
 
     public override void JumpCheck(ref float xVel, ref float yVel)
     {
+        Debug.Log(spriteObject.GetComponent<Animator>().GetBool("Can Double Jump"));
+
         if (!isAirborne)
         {
+            spriteObject.GetComponent<Animator>().SetBool("Can Double Jump", true);
             canDoubleJump = true;
         }
 
@@ -27,6 +35,7 @@ public class Lity : Player
             yVel += jumpVel;
             isAirborne = true;
             spriteObject.GetComponent<Animator>().SetTrigger("Double Jumped");
+            spriteObject.GetComponent<Animator>().SetBool("Can Double Jump", false);
             canDoubleJump = false;
         }
 
