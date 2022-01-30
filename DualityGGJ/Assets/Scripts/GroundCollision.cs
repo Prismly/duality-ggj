@@ -10,7 +10,7 @@ public class GroundCollision : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.tag == "Ground") {
             //player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", false);
-            Debug.Log("lands" + Time.frameCount);
+            //Debug.Log("lands" + Time.frameCount);
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetTrigger("Lands");
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Grounded", true);
             player.GetComponent<Player>().isAirborne = false;

@@ -16,8 +16,8 @@ public class WallCollision : MonoBehaviour
         //if (collision.gameObject.tag == "Ground" && player.GetComponent<Player>().isAirborne == true)
         if (collision.gameObject.tag == "Ground" && player.GetComponent<Rigidbody2D>().velocity.y < player.GetComponent<Player>().maxSpeedAtWhichWallsCanBeGrabbed)
         {
-            Debug.Log("stick");
-            Debug.Log(player.GetComponent<Rigidbody2D>().velocity.y);
+            //Debug.Log("stick");
+            //Debug.Log(player.GetComponent<Rigidbody2D>().velocity.y);
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Wallborne", true);
             player.GetComponent<Player>().isWallborne = isRight ? Player.WallState.WALLBORNE_R : Player.WallState.WALLBORNE_L;
         }
@@ -28,7 +28,7 @@ public class WallCollision : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Touching Wall", false);
-            Debug.Log("unstick");
+            //Debug.Log("unstick");
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Wallborne", false);
             player.GetComponent<Player>().isWallborne = Player.WallState.NOT_WALLBORNE;
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dua : Player
 {
     [SerializeField]
-    GameObject ballForm;
+    GameObject ballForm, shadowForm;
 
     KeyCode dashRollKey = KeyCode.DownArrow;
     DashRollStates dashRollState = DashRollStates.READY;
@@ -14,6 +14,8 @@ public class Dua : Player
     float cooldownDurationDR = 1f;
     float sprintSpeed = 20f;
     float originalSpeedCap = 15f;
+    [SerializeField]
+    float timerShadow, timerShadowMax;
 
     enum DashRollStates
     {
@@ -59,6 +61,17 @@ public class Dua : Player
                 }
             case DashRollStates.SPRINTING:
                 {
+                    timerShadow += Time.deltaTime;
+                    Debug.Log(timerShadow);
+                    if (timerShadow > timerShadowMax)
+                    {
+                        timerShadow = 0;
+                        Debug.Log("spawn shadow");
+                        GameObject newShadow = Instantiate(shadowForm);
+                        newShadow.GetComponent<SpriteRenderer>().sprite = spriteObject.GetComponent<SpriteRenderer>().sprite;
+                        newShadow.transform.position = transform.position;
+                    }
+
                     if ((facingRight && rigidbody.velocity.x < originalSpeedCap) ||
                         (!facingRight && rigidbody.velocity.x > -originalSpeedCap))
                     {
@@ -110,6 +123,7 @@ public class Dua : Player
             dashRollState = DashRollStates.SPRINTING;
             speedCapX = sprintSpeed;
             speedCapY = originalSpeedCap;
+            timerShadow = 0;
             if (Input.GetKey(leftKey) && !Input.GetKey(rightKey))
             {
                 rigidbody.velocity = Vector2.left * sprintSpeed;

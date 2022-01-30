@@ -65,6 +65,9 @@ MonoBehaviour:
   isWallborne: 0
   cameraController: {fileID: 0}
   ballForm: {fileID: 2576369470125620439, guid: f33bda9b2149f2646b1cbb425571b53d, type: 3}
+  shadowForm: {fileID: 6835705634783607253, guid: 6b2f1f3c8073c764ea6bd4b4c110def0, type: 3}
+  timerShadow: 0
+  timerShadowMax: 0.01
 --- !u!50 &2094124527018579505
 Rigidbody2D:
   serializedVersion: 4
