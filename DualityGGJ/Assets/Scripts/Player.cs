@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public float speedCapX, speedCapY, accelFactor, decelFactor;
     [SerializeField]
     public GameObject spriteObject;
+    [SerializeField]
+    public float maxSpeedAtWhichWallsCanBeGrabbed;
 
     protected bool facingRight = true;
     public bool isAirborne = true;

@@ -26,6 +26,7 @@ public class Lity : Player
         if ((!isAirborne || (isAirborne && isWallborne != WallState.NOT_WALLBORNE)) && Input.GetKeyDown(jumpKey))
         {
             //Player is either grounded OR on a wall and jumps
+            spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
             yVel += jumpVel;
             isAirborne = true;
         }
@@ -34,8 +35,7 @@ public class Lity : Player
             //Player isn't able to jump normally and must double jump, but can
             yVel += jumpVel;
             isAirborne = true;
-            spriteObject.GetComponent<Animator>().SetTrigger("Double Jumped");
-            spriteObject.GetComponent<Animator>().SetBool("Can Double Jump", false);
+            spriteObject.GetComponent<Animator>().SetTrigger("Double Jumps");
             canDoubleJump = false;
         }
 

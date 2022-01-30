@@ -12,6 +12,7 @@ public class GroundCollision : MonoBehaviour
             //player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", false);
             Debug.Log("lands" + Time.frameCount);
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetTrigger("Lands");
+            player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Grounded", true);
             player.GetComponent<Player>().isAirborne = false;
         }
     }
@@ -22,6 +23,7 @@ public class GroundCollision : MonoBehaviour
         {
             //player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Airborne", true);
             player.GetComponent<Player>().spriteObject.GetComponent<Animator>().ResetTrigger("Lands");
+            player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Grounded", false);
             player.GetComponent<Player>().isAirborne = true;
         }
     }
