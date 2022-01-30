@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2094124527018579517}
   m_Layer: 0
   m_Name: Dua
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.125, y: 0.5625}
+  m_Size: {x: 0.125, y: 0.4375}
   m_EdgeRadius: 0
 --- !u!114 &7756347274385860665
 MonoBehaviour:
@@ -422,7 +422,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.125, y: 0.5625}
+  m_Size: {x: 0.125, y: 0.4375}
   m_EdgeRadius: 0
 --- !u!114 &7576197144877097734
 MonoBehaviour:

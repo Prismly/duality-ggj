@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField]
+    string levelKey;
     float time;
     public Text currentTimeText;
 
@@ -15,6 +17,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private Image gold;
     [SerializeField] private Image silver;
     [SerializeField] private Image bronze;
+    [SerializeField] private Button back;
 
     [SerializeField] int goldTime;
     [SerializeField] int silverTime;
@@ -32,10 +35,18 @@ public class Timer : MonoBehaviour
     }
 
     private void onTimerStop() {
+        if (time < PlayerPrefs.GetFloat(levelKey))
+        {
+            PlayerPrefs.SetFloat(levelKey, time);
+        }
+        
         timerActive = false;
         levelComplete.enabled = true;
+        Debug.Log("bababooey");
+        back.GetComponent<Image>().enabled = true;
+        back.GetComponent<Button>().enabled = true;
 
-        if(time < bronzeTime) {
+        if (time < bronzeTime) {
             bronze.enabled = true;
         }
         if(time < silverTime) {
@@ -44,7 +55,6 @@ public class Timer : MonoBehaviour
         if(time < goldTime) {
             gold.enabled = true;   
         }
-        gameObject.GetComponent<BestTimes>().checkIfBestTime(time);
     }
     // Update is called once per frame
     void Update()
