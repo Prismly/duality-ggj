@@ -169,7 +169,7 @@ MonoBehaviour:
   lityForm: {fileID: 1517778132236012007, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
   explodeFX: {fileID: 2159167752398749911, guid: f55e8b247d473034b837ed0dde8ea580, type: 3}
   isDua: 1
-  explosiveForce: 4.5
+  explosiveForce: 3
   explosionRadius: 1
 --- !u!50 &4865581924479534054
 Rigidbody2D:

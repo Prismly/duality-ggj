@@ -109,8 +109,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: ball_spin_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 16
         y: 0
-        width: 8
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: ball_spin_2
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 0
-        width: 8
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: ball_spin_3
       rect:
         serializedVersion: 2
-        x: 24
+        x: 48
         y: 0
-        width: 8
-        height: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

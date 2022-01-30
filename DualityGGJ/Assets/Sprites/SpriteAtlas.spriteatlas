@@ -43,66 +43,13 @@ SpriteAtlas:
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables:
-    - {fileID: 2800000, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
+    packables: []
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites:
-  - {fileID: -1513545899, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1229713234, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 2016224586, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 901327771, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 2112652315, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -922668263, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -592404200, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 1234682453, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -623405091, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 396076750, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1699229136, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 1769606183, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1151554294, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 807186884, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1044399221, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 831090014, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 1298328400, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -2088593361, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 1357244568, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1619722907, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 1078595817, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1851060938, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1745503853, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -1865643341, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: -2134769262, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  - {fileID: 535142956, guid: 97df13c219910e14c8cbdebabba57dda, type: 3}
-  m_PackedSpriteNamesToIndex:
-  - groundTileMap_10
-  - groundTileMap_11
-  - groundTileMap_12
-  - groundTileMap_13
-  - groundTileMap_14
-  - groundTileMap_15
-  - groundTileMap_16
-  - groundTileMap_17
-  - groundTileMap_18
-  - groundTileMap_19
-  - groundTileMap_1
-  - groundTileMap_0
-  - groundTileMap_3
-  - groundTileMap_2
-  - groundTileMap_5
-  - groundTileMap_4
-  - groundTileMap_7
-  - groundTileMap_6
-  - groundTileMap_9
-  - groundTileMap_8
-  - groundTileMap_21
-  - groundTileMap_20
-  - groundTileMap_23
-  - groundTileMap_22
-  - groundTileMap_25
-  - groundTileMap_24
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
   m_RenderDataMap: {}
   m_Tag: SpriteAtlas
   m_IsVariant: 0

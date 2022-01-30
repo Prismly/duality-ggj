@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         yVel = Mathf.Clamp(yVel, -speedCapY, speedCapY);
         //Debug.Log(yVel);
         rigidbody.velocity = new Vector2(xVel, yVel);
-
+		
         //TRANSFORMATION
         TransformCheck();
     }
@@ -123,6 +123,10 @@ public class Player : MonoBehaviour
 
     public virtual void TransformCheck()
     {
+        //Implemented in child classes
+    }
+
+    public virtual void PlayJump() {
         //Implemented in child classes
     }
 }
