@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidbody;
 
     [SerializeField]
     public float wallJumpVel, jumpVel, upGrav, downGrav, wallDownGrav;
     [SerializeField]
-    public float speedCap, accelFactor, decelFactor;
+    public float speedCapX, speedCapY, accelFactor, decelFactor;
     [SerializeField]
     public GameObject spriteObject;
 
+    protected bool facingRight = true;
     public bool isAirborne = true;
     public WallState isWallborne = WallState.NOT_WALLBORNE;
     public enum WallState
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
         InputChecks();
     }
 
-    void InputChecks()
+    public virtual void InputChecks()
     {
         //HORIZONTAL MOVEMENT
         float xVel = rigidbody.velocity.x;
@@ -50,12 +51,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey(leftKey))
         {
             xVel -= accelFactor * Time.deltaTime;
+            facingRight = false;
             spriteObject.GetComponent<SpriteRenderer>().flipX = true;
             spriteObject.GetComponent<Animator>().SetBool("KeyDown", true);
         }
         if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
+            facingRight = true;
             spriteObject.GetComponent<SpriteRenderer>().flipX = false;
             spriteObject.GetComponent<Animator>().SetBool("KeyDown", true);
         }
@@ -84,8 +87,9 @@ public class Player : MonoBehaviour
         else
             rigidbody.gravityScale = wallDownGrav;
 
-        xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
-        yVel = Mathf.Clamp(yVel, -speedCap, speedCap);
+        xVel = Mathf.Clamp(xVel, -speedCapX, speedCapX);
+        yVel = Mathf.Clamp(yVel, -speedCapY, speedCapY);
+        //Debug.Log(yVel);
         rigidbody.velocity = new Vector2(xVel, yVel);
 
         //TRANSFORMATION
