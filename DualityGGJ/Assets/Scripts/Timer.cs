@@ -44,6 +44,7 @@ public class Timer : MonoBehaviour
         if(time < goldTime) {
             gold.enabled = true;   
         }
+        gameObject.GetComponent<BestTimes>().checkIfBestTime(time);
     }
     // Update is called once per frame
     void Update()
