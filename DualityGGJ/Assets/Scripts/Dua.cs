@@ -10,7 +10,7 @@ public class Dua : Player
     KeyCode dashRollKey = KeyCode.DownArrow;
     DashRollStates dashRollState = DashRollStates.READY;
     float timerDR = 0f;
-    float spinDurationDR = 0.5f;
+    float spinDurationDR = 0.25f;
     float cooldownDurationDR = 1f;
     float sprintSpeed = 20f;
     float originalSpeedCap = 15f;
@@ -33,6 +33,7 @@ public class Dua : Player
                     if (Input.GetKeyDown(dashRollKey))
                     {
                         Debug.Log("Switch to SPINNING");
+                        spriteObject.GetComponent<Animator>().SetTrigger("Pound Dash Windup");
                         dashRollState = DashRollStates.SPINNING;
                         rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
                         timerDR = 0;
@@ -77,6 +78,7 @@ public class Dua : Player
                     else
                     {
                         Debug.Log("Switch to READY");
+                        spriteObject.GetComponent<Animator>().SetTrigger("Pound Dash Cooldown Expired");
                         dashRollState = DashRollStates.READY;
                     }
                     break;
@@ -99,11 +101,12 @@ public class Dua : Player
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         if (dashRollState == DashRollStates.DIVING)
         {
             Debug.Log("Switch to SPRINTING");
+            spriteObject.GetComponent<Animator>().SetTrigger("Pound Dash Sprint Starts");
             dashRollState = DashRollStates.SPRINTING;
             speedCapX = sprintSpeed;
             speedCapY = originalSpeedCap;

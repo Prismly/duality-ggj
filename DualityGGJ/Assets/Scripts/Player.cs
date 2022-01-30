@@ -50,34 +50,34 @@ public class Player : MonoBehaviour
 
         if ((facingRight == true && isWallborne == WallState.WALLBORNE_L) || (facingRight == false && isWallborne == WallState.WALLBORNE_R))
         {
+            spriteObject.GetComponent<Animator>().SetBool("Touching Wall", false);
             spriteObject.GetComponent<Animator>().SetBool("Wallborne", false);
         }
 
-        if (Input.GetKey(leftKey))
+        if (!Input.GetKey(rightKey) && Input.GetKey(leftKey))
         {
             xVel -= accelFactor * Time.deltaTime;
             facingRight = false;
             spriteObject.GetComponent<SpriteRenderer>().flipX = true;
             spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", true);
         }
-        if (Input.GetKey(rightKey))
+        else if (Input.GetKey(rightKey) && !Input.GetKey(leftKey))
         {
             xVel += accelFactor * Time.deltaTime;
             facingRight = true;
             spriteObject.GetComponent<SpriteRenderer>().flipX = false;
             spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", true);
         }
-        if(!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
+        else
         {
+            if (!isAirborne)
+            {
+                if (xVel > 0.01f)
+                    xVel -= decelFactor * Time.deltaTime;
+                if (xVel < -0.01f)
+                    xVel += decelFactor * Time.deltaTime;
+            }
             spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", false);
-        }
-
-        if (!isAirborne && !Input.GetKey(leftKey) && !Input.GetKey(rightKey))
-        {
-            if (xVel > 0.01f)
-                xVel -= decelFactor * Time.deltaTime;
-            if (xVel < -0.01f)
-                xVel += decelFactor * Time.deltaTime;
         }
 
         //VERTICAL MOVEMENT
@@ -114,6 +114,27 @@ public class Player : MonoBehaviour
             //Player is either grounded OR on a wall and jumps
             yVel += jumpVel;
             isAirborne = true;
+        }
+    }
+
+    //When the player holds both left and right, we want the character to respond as if the previous button was held.
+    public Vector2 PickHorInputDirection()
+    {
+        if(Input.GetKey(leftKey) && Input.GetKey(rightKey))
+        {
+            return facingRight ? Vector2.right : Vector2.left;
+        }
+        else if(Input.GetKey(leftKey))
+        {
+            return Vector2.left;
+        }
+        else if(Input.GetKey(rightKey))
+        {
+            return Vector2.right;
+        }
+        else
+        {
+            return Vector2.zero;
         }
     }
 
