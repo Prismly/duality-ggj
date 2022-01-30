@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
         {
             //Player is grounded AND not on a wall and jumps (for Dua mostly)
             spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
-            yVel += jumpVel;
+            yVel = jumpVel;
             isAirborne = true;
         }
     }

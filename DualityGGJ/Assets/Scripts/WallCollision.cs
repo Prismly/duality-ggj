@@ -11,7 +11,8 @@ public class WallCollision : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Touching Wall", true);
+        if (collision.gameObject.tag == "Ground")
+            player.GetComponent<Player>().spriteObject.GetComponent<Animator>().SetBool("Touching Wall", true);
         //if (collision.gameObject.tag == "Ground" && player.GetComponent<Player>().isAirborne == true)
         if (collision.gameObject.tag == "Ground" && player.GetComponent<Rigidbody2D>().velocity.y < player.GetComponent<Player>().maxSpeedAtWhichWallsCanBeGrabbed)
         {
