@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1234677767
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a717cc5debf424048955fd2edf8c337e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,6 +162,7 @@ MonoBehaviour:
   accelFactor: 50
   decelFactor: 30
   spriteObject: {fileID: 1242895049098593123}
+  maxSpeedAtWhichWallsCanBeGrabbed: 0
   isAirborne: 1
   isWallborne: 0
   cameraController: {fileID: 0}
@@ -169,7 +170,7 @@ MonoBehaviour:
   lityForm: {fileID: 1517778132236012007, guid: 9163871994600e24fa2854a2adab5e6a, type: 3}
   explodeFX: {fileID: 2159167752398749911, guid: f55e8b247d473034b837ed0dde8ea580, type: 3}
   isDua: 1
-  explosiveForce: 3
+  explosiveForce: 5
   explosionRadius: 1
 --- !u!50 &4865581924479534054
 Rigidbody2D:

@@ -56,7 +56,7 @@ MonoBehaviour:
   downGrav: 3
   wallDownGrav: 0
   speedCapX: 15
-  speedCapY: 15
+  speedCapY: 10
   accelFactor: 50
   decelFactor: 30
   spriteObject: {fileID: 2178780377677528989}

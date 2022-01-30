@@ -7,6 +7,8 @@ public class Lity : Player
     [SerializeField]
     GameObject ballForm;
     static bool canDoubleJump = true;
+    [SerializeField]
+    float wallJumpReduction;
 
     private void Start()
     {
@@ -27,7 +29,13 @@ public class Lity : Player
         {
             //Player is either grounded OR on a wall and jumps
             spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
-            yVel = jumpVel;
+            float jumpPower = jumpVel;
+            if (isAirborne && isWallborne != WallState.NOT_WALLBORNE)
+            {
+                jumpPower *= wallJumpReduction;
+            }
+
+            yVel = jumpPower;
             isAirborne = true;
         }
         else if (canDoubleJump && Input.GetKeyDown(jumpKey))
@@ -44,12 +52,12 @@ public class Lity : Player
             if (isWallborne == WallState.WALLBORNE_L)
             {
                 Debug.Log("jompright");
-                xVel += wallJumpVel;
+                xVel = wallJumpVel;
             }
             else
             {
                 Debug.Log("jompleft");
-                xVel -= wallJumpVel;
+                xVel = -wallJumpVel;
             }
             isWallborne = WallState.NOT_WALLBORNE;
         }

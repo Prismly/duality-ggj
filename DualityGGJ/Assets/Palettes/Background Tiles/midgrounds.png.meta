@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e6b8def4172253e4bb4d5e58f422f84f
+guid: a6f0a158658151b4a9a3ddd9b9ec86b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe188004066c9c747bd634d7bbdac78e
-      internalID: 75433259
+      spriteID: 63e05942306f54d44acfeb213740fb2b
+      internalID: -1429521046
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d55791afc0825a498c8d1fe51725e12
-      internalID: -1790941233
+      spriteID: de7b0080bdfba81489814208ad873b2f
+      internalID: -793086768
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7570103118b63bc45a078ff9a6e63334
-      internalID: 1351810289
+      spriteID: 8398d2dbaab17264b9f136f2ecb39cfd
+      internalID: -558306477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: midgrounds_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563518b88f235714fa320aeba771e9c0
+      internalID: -1557865256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: midgrounds_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df92743e9c2cf76409213d1448d680fc
+      internalID: 1003168836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: midgrounds_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016284efbaeca964ca14d485f96335ba
+      internalID: 1945251560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: midgrounds_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b001386a92ce744383a8452a7fdadd1
+      internalID: 1631240465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: midgrounds_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf90361335ef0de4d8172bffbe485f66
+      internalID: 1566708566
       vertices: []
       indices: 
       edges: []
@@ -177,9 +282,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      midgrounds_0: 75433259
-      midgrounds_1: -1790941233
-      midgrounds_2: 1351810289
+      midgrounds_3: -1557865256
+      midgrounds_4: 1003168836
+      midgrounds_5: 1945251560
+      midgrounds_7: 1566708566
+      midgrounds_0: -1429521046
+      midgrounds_1: -793086768
+      midgrounds_2: -558306477
+      midgrounds_6: 1631240465
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

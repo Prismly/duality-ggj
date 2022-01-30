@@ -59,6 +59,12 @@ public class Dua : Player
                     }
                     break;
                 }
+            case DashRollStates.DIVING:
+                {
+                    //Keep applying velocity so Dua doesn't slow down mid-dive
+                    rigidbody.velocity = Vector2.down * 20;
+                    break;
+                }
             case DashRollStates.SPRINTING:
                 {
                     timerShadow += Time.deltaTime;
