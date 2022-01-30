@@ -125,9 +125,4 @@ public class Dua : Player
             timerDR = 0;
         }
 	}
-
-    public override void PlayJump()
-	{
-        spriteObject.GetComponent<Animator>().Play("Dua_Jump");
-    }
 }

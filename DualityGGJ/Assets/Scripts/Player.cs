@@ -117,33 +117,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    //When the player holds both left and right, we want the character to respond as if the previous button was held.
-    public Vector2 PickHorInputDirection()
-    {
-        if(Input.GetKey(leftKey) && Input.GetKey(rightKey))
-        {
-            return facingRight ? Vector2.right : Vector2.left;
-        }
-        else if(Input.GetKey(leftKey))
-        {
-            return Vector2.left;
-        }
-        else if(Input.GetKey(rightKey))
-        {
-            return Vector2.right;
-        }
-        else
-        {
-            return Vector2.zero;
-        }
-    }
-
     public virtual void TransformCheck()
     {
-        //Implemented in child classes
-    }
-
-    public virtual void PlayJump() {
         //Implemented in child classes
     }
 }

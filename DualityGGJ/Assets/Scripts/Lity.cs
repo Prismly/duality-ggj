@@ -6,7 +6,7 @@ public class Lity : Player
 {
     [SerializeField]
     GameObject ballForm;
-    bool canDoubleJump = true;
+    static bool canDoubleJump = false;
 
     public override void JumpCheck(ref float xVel, ref float yVel)
     {
@@ -57,9 +57,5 @@ public class Lity : Player
             newForm.GetComponent<Ball>().isDua = true;
             Destroy(gameObject);
         }
-    }
-
-    public override void PlayJump() {
-        spriteObject.GetComponent<Animator>().Play("Lity_Jump");
     }
 }
