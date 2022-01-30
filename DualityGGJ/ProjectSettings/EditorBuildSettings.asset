@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: b1c7bd15a70b1e544931bbd803cef195
   - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 2d6965785c10ace4b8224ef9723f9ae0
+  - enabled: 1
     path: Assets/Scenes/Tutorial Stage.unity
     guid: 036ce7a0d20964e4c9d4e557173cd537
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: 2d6965785c10ace4b8224ef9723f9ae0
+    path: Assets/Scenes/Level1.unity
+    guid: 6bd92003369f2ce47b4f57f6e85fa5f4
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 849440d1b2ce4704db581d4b02d4b08d
   m_configObjects: {}
