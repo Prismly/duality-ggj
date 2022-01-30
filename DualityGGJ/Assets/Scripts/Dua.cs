@@ -30,7 +30,7 @@ public class Dua : Player
         {
             case DashRollStates.READY:
                 {
-                    if (Input.GetKeyDown(dashRollKey))
+                    if (Input.GetKeyDown(dashRollKey) && isWallborne == WallState.NOT_WALLBORNE)
                     {
                         Debug.Log("Switch to SPINNING");
                         spriteObject.GetComponent<Animator>().SetTrigger("Pound Dash Windup");

@@ -102,7 +102,9 @@ public class Player : MonoBehaviour
         yVel = Mathf.Clamp(yVel, -speedCapY, speedCapY);
         //Debug.Log(yVel);
         rigidbody.velocity = new Vector2(xVel, yVel);
-		
+
+        spriteObject.GetComponent<Animator>().SetFloat("Vert Velocity", rigidbody.velocity.y);
+
         //TRANSFORMATION
         TransformCheck();
     }
@@ -111,7 +113,8 @@ public class Player : MonoBehaviour
     {
         if (!isAirborne && isWallborne == WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
         {
-            //Player is either grounded OR on a wall and jumps
+            //Player is grounded AND not on a wall and jumps (for Dua mostly)
+            spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
             yVel += jumpVel;
             isAirborne = true;
         }
