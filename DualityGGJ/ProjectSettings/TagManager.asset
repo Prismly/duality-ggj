@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Start
+  - CameraLimit
+  - Stop
   layers:
   - Default
   - TransparentFX
@@ -45,6 +48,18 @@ TagManager:
   - name: BG
     uniqueID: 3438989339
     locked: 0
+  - name: MG
+    uniqueID: 4048287071
+    locked: 0
   - name: FG
     uniqueID: 67241939
+    locked: 0
+  - name: FX
+    uniqueID: 2387343565
+    locked: 0
+  - name: Player
+    uniqueID: 3060289529
+    locked: 0
+  - name: UI
+    uniqueID: 1979463907
     locked: 0

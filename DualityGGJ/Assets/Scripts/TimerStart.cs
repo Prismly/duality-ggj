@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TimerStart : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision) {
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         GameEvents.current.timerStartTrigger();
     }
 }
