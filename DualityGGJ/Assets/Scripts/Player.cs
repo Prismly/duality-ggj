@@ -48,23 +48,28 @@ public class Player : MonoBehaviour
         //HORIZONTAL MOVEMENT
         float xVel = rigidbody.velocity.x;
 
+        if ((facingRight == true && isWallborne == WallState.WALLBORNE_L) || (facingRight == false && isWallborne == WallState.WALLBORNE_R))
+        {
+            spriteObject.GetComponent<Animator>().SetBool("Wallborne", false);
+        }
+
         if (Input.GetKey(leftKey))
         {
             xVel -= accelFactor * Time.deltaTime;
             facingRight = false;
             spriteObject.GetComponent<SpriteRenderer>().flipX = true;
-            spriteObject.GetComponent<Animator>().SetBool("KeyDown", true);
+            spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", true);
         }
         if (Input.GetKey(rightKey))
         {
             xVel += accelFactor * Time.deltaTime;
             facingRight = true;
             spriteObject.GetComponent<SpriteRenderer>().flipX = false;
-            spriteObject.GetComponent<Animator>().SetBool("KeyDown", true);
+            spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", true);
         }
         if(!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
         {
-            spriteObject.GetComponent<Animator>().SetBool("KeyDown", false);
+            spriteObject.GetComponent<Animator>().SetBool("Move Key Pressed", false);
         }
 
         if (!isAirborne && !Input.GetKey(leftKey) && !Input.GetKey(rightKey))
@@ -81,11 +86,17 @@ public class Player : MonoBehaviour
         JumpCheck(ref xVel, ref yVel);
 
         if (rigidbody.velocity.y > 0)
+        {
             rigidbody.gravityScale = upGrav;
+        }
         else if (isWallborne == WallState.NOT_WALLBORNE)
+        {
             rigidbody.gravityScale = downGrav;
+        }
         else
+        {
             rigidbody.gravityScale = wallDownGrav;
+        }
 
         xVel = Mathf.Clamp(xVel, -speedCapX, speedCapX);
         yVel = Mathf.Clamp(yVel, -speedCapY, speedCapY);
@@ -98,7 +109,7 @@ public class Player : MonoBehaviour
 
     public virtual void JumpCheck(ref float xVel, ref float yVel)
     {
-        if (!isAirborne && Input.GetKeyDown(jumpKey))
+        if (!isAirborne && isWallborne == WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
         {
             //Player is either grounded OR on a wall and jumps
             yVel += jumpVel;

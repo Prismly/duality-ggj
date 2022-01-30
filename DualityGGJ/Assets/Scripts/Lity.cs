@@ -26,6 +26,7 @@ public class Lity : Player
             //Player isn't able to jump normally and must double jump, but can
             yVel += jumpVel;
             isAirborne = true;
+            spriteObject.GetComponent<Animator>().SetTrigger("Double Jumped");
             canDoubleJump = false;
         }
 

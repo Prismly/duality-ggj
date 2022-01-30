@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09b185d9aa9027b4da782ba2d955f9e9
+guid: 5223e8842a275a64285d26c8e16d3a90
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lity_spritesheet_0
+      name: lity_run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 251c2f1fd2dff72489b349dc077a4dd6
-      internalID: 456905879
+      spriteID: 06c9121814a236344815c1b39c28ead0
+      internalID: -582024356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lity_spritesheet_1
+      name: lity_run_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ca158180c21aff4f903116db473c550
-      internalID: 614140917
+      spriteID: 2e9cdd7e5f3ed6949ad0c5c27eb3b668
+      internalID: 120561541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lity_spritesheet_2
+      name: lity_run_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 271778e8fdc92164193cfc848ce4b92f
-      internalID: 124143816
+      spriteID: c81e9a4d599eb6d498e1dc2fd8bad8af
+      internalID: -253546431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lity_spritesheet_3
+      name: lity_run_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60478c7390ccf394181d21244d0099a6
-      internalID: 1935519750
+      spriteID: dfc3a99bb7e7b0d4e82d5958644afdbf
+      internalID: 1643962594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lity_spritesheet_4
+      name: lity_run_4
       rect:
         serializedVersion: 2
         x: 64
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 128d8849cd180f841bfa27adc6911711
-      internalID: 243954672
+      spriteID: 7bc83d264d2254a449351d3ed2f606f4
+      internalID: 1106531446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lity_spritesheet_5
+      name: lity_run_5
       rect:
         serializedVersion: 2
         x: 80
@@ -223,155 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf45a0f863d4f814c9dc359cffdc8305
-      internalID: 951382826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e774c56b3101de40b50ee3024b04ef7
-      internalID: 84865825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9eec3d46f57cb4d4cb1e43f1ea88ae46
-      internalID: -1926740344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cc11f1e99076bd42a6ed45a823769bf
-      internalID: -736028461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebb88e832076ccc418b7b86995b79685
-      internalID: 1142225416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa3271ffa356fc545b7b6ad3431bffdc
-      internalID: -1978110947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32177e9d4cfe7e04ca074651b5ff34e3
-      internalID: 1567329748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lity_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94097a9be90e85b4080f4e1320eb73fe
-      internalID: 6398817
+      spriteID: bbef0054d3433e544b329ceb59f423e7
+      internalID: -436157181
       vertices: []
       indices: 
       edges: []
@@ -387,19 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lity_spritesheet_1: 614140917
-      lity_spritesheet_4: 243954672
-      lity_spritesheet_6: 84865825
-      lity_spritesheet_5: 951382826
-      lity_spritesheet_11: 1567329748
-      lity_spritesheet_0: 456905879
-      lity_spritesheet_10: -1978110947
-      lity_spritesheet_2: 124143816
-      lity_spritesheet_8: -736028461
-      lity_spritesheet_7: -1926740344
-      lity_spritesheet_9: 1142225416
-      lity_spritesheet_12: 6398817
-      lity_spritesheet_3: 1935519750
+      lity_run_0: -582024356
+      lity_run_4: 1106531446
+      lity_run_1: 120561541
+      lity_run_5: -436157181
+      lity_run_3: 1643962594
+      lity_run_2: -253546431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
