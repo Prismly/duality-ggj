@@ -72,32 +72,10 @@ public class Player : MonoBehaviour
                 xVel += decelFactor * Time.deltaTime;
         }
 
-        xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
-        rigidbody.velocity = new Vector2(xVel, rigidbody.velocity.y);
-
-
         //VERTICAL MOVEMENT
-        if ((!isAirborne || isWallborne != WallState.NOT_WALLBORNE) && Input.GetKeyDown(jumpKey))
-        {
-            //Player is either grounded OR on a wall and jumps
-            rigidbody.velocity += Vector2.up * jumpVel;
-            isAirborne = true;
-        }
+        float yVel = rigidbody.velocity.y;
 
-        if (isWallborne != WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
-        {
-            if (isWallborne == WallState.WALLBORNE_L)
-            {
-                Debug.Log("jompright");
-                rigidbody.velocity += Vector2.right * wallJumpVel;
-            }
-            else
-            {
-                Debug.Log("jompleft");
-                rigidbody.velocity += Vector2.left * wallJumpVel;
-            }
-            isWallborne = WallState.NOT_WALLBORNE;
-        }
+        JumpCheck(ref xVel, ref yVel);
 
         if (rigidbody.velocity.y > 0)
             rigidbody.gravityScale = upGrav;
@@ -106,9 +84,37 @@ public class Player : MonoBehaviour
         else
             rigidbody.gravityScale = wallDownGrav;
 
+        xVel = Mathf.Clamp(xVel, -speedCap, speedCap);
+        yVel = Mathf.Clamp(yVel, -speedCap, speedCap);
+        rigidbody.velocity = new Vector2(xVel, yVel);
 
         //TRANSFORMATION
         TransformCheck();
+    }
+
+    public virtual void JumpCheck(ref float xVel, ref float yVel)
+    {
+        if ((!isAirborne || isWallborne != WallState.NOT_WALLBORNE) && Input.GetKeyDown(jumpKey))
+        {
+            //Player is either grounded OR on a wall and jumps
+            yVel += jumpVel;
+            isAirborne = true;
+        }
+
+        if (isWallborne != WallState.NOT_WALLBORNE && Input.GetKeyDown(jumpKey))
+        {
+            if (isWallborne == WallState.WALLBORNE_L)
+            {
+                Debug.Log("jompright");
+                xVel += wallJumpVel;
+            }
+            else
+            {
+                Debug.Log("jompleft");
+                xVel -= wallJumpVel;
+            }
+            isWallborne = WallState.NOT_WALLBORNE;
+        }
     }
 
     public virtual void TransformCheck()
