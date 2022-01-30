@@ -29,6 +29,7 @@ public class Lity : Player
         {
             //Player is either grounded OR on a wall and jumps
             spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
+            jump.Play();
             float jumpPower = jumpVel;
             if (isAirborne && isWallborne != WallState.NOT_WALLBORNE)
             {
@@ -44,6 +45,7 @@ public class Lity : Player
             yVel = jumpVel;
             isAirborne = true;
             spriteObject.GetComponent<Animator>().SetTrigger("Double Jumps");
+            jump.Play();
             canDoubleJump = false;
         }
 

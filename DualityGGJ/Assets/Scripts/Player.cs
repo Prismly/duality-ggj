@@ -33,6 +33,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected CameraController cameraController;
 
+    [SerializeField]
+    protected AudioSource jump;
+    [SerializeField]
+    public AudioSource explode;
+
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
@@ -117,6 +122,7 @@ public class Player : MonoBehaviour
         {
             //Player is grounded AND not on a wall and jumps (for Dua mostly)
             spriteObject.GetComponent<Animator>().SetTrigger("Jumps");
+            jump.Play();
             yVel = jumpVel;
             isAirborne = true;
         }

@@ -18,6 +18,7 @@ public class Ball : Player
         if (Input.GetKeyUp(transformKey))
         {
             GameObject newForm = isDua ? Instantiate(duaForm) : Instantiate(lityForm);
+            newForm.GetComponent<Player>().explode.Play();
             newForm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             int[] checksX = { -1, 0, 1, -1, 1, -1, 0, 1 };
