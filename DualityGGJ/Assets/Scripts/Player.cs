@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    protected Rigidbody2D rigidbody;
-
     [SerializeField]
     public float wallJumpVel, jumpVel, upGrav, downGrav, wallDownGrav;
     [SerializeField]
@@ -14,6 +12,8 @@ public class Player : MonoBehaviour
     public GameObject spriteObject;
     [SerializeField]
     public float maxSpeedAtWhichWallsCanBeGrabbed;
+
+    Rigidbody2D rigidbody;
 
     protected bool facingRight = true;
     public bool isAirborne = true;
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
     public virtual void InputChecks()
     {
         //HORIZONTAL MOVEMENT
-        float xVel = rigidbody.velocity.x;
+        float xVel = GetComponent<Rigidbody2D>().velocity.x;
 
         if ((facingRight == true && isWallborne == WallState.WALLBORNE_L) || (facingRight == false && isWallborne == WallState.WALLBORNE_R))
         {
@@ -83,29 +83,29 @@ public class Player : MonoBehaviour
         }
 
         //VERTICAL MOVEMENT
-        float yVel = rigidbody.velocity.y;
+        float yVel = GetComponent<Rigidbody2D>().velocity.y;
 
         JumpCheck(ref xVel, ref yVel);
 
-        if (rigidbody.velocity.y > 0)
+        if (GetComponent<Rigidbody2D>().velocity.y > 0)
         {
-            rigidbody.gravityScale = upGrav;
+            GetComponent<Rigidbody2D>().gravityScale = upGrav;
         }
         else if (isWallborne == WallState.NOT_WALLBORNE)
         {
-            rigidbody.gravityScale = downGrav;
+            GetComponent<Rigidbody2D>().gravityScale = downGrav;
         }
         else
         {
-            rigidbody.gravityScale = wallDownGrav;
+            GetComponent<Rigidbody2D>().gravityScale = wallDownGrav;
         }
 
         xVel = Mathf.Clamp(xVel, -speedCapX, speedCapX);
         yVel = Mathf.Clamp(yVel, -speedCapY, speedCapY);
         //Debug.Log(yVel);
-        rigidbody.velocity = new Vector2(xVel, yVel);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(xVel, yVel);
 
-        spriteObject.GetComponent<Animator>().SetFloat("Vert Velocity", rigidbody.velocity.y);
+        spriteObject.GetComponent<Animator>().SetFloat("Vert Velocity", GetComponent<Rigidbody2D>().velocity.y);
 
         //TRANSFORMATION
         TransformCheck();

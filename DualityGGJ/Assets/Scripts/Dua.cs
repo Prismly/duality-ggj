@@ -37,7 +37,7 @@ public class Dua : Player
                         //Debug.Log("Switch to SPINNING");
                         spriteObject.GetComponent<Animator>().SetTrigger("Pound Dash Windup");
                         dashRollState = DashRollStates.SPINNING;
-                        rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+                        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
                         timerDR = 0;
                     }
                     break;
@@ -52,17 +52,17 @@ public class Dua : Player
                     {
                         //Debug.Log("Switch to DIVING");
                         dashRollState = DashRollStates.DIVING;
-                        rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                         speedCapX = 1;
                         speedCapY = 20;
-                        rigidbody.velocity = Vector2.down * 20;
+                        GetComponent<Rigidbody2D>().velocity = Vector2.down * 20;
                     }
                     break;
                 }
             case DashRollStates.DIVING:
                 {
                     //Keep applying velocity so Dua doesn't slow down mid-dive
-                    rigidbody.velocity = Vector2.down * 20;
+                    GetComponent<Rigidbody2D>().velocity = Vector2.down * 20;
                     break;
                 }
             case DashRollStates.SPRINTING:
@@ -78,8 +78,8 @@ public class Dua : Player
                         newShadow.transform.position = transform.position;
                     }
 
-                    if ((facingRight && rigidbody.velocity.x < originalSpeedCap) ||
-                        (!facingRight && rigidbody.velocity.x > -originalSpeedCap))
+                    if ((facingRight && GetComponent<Rigidbody2D>().velocity.x < originalSpeedCap) ||
+                        (!facingRight && GetComponent<Rigidbody2D>().velocity.x > -originalSpeedCap))
                     {
                         speedCapX = originalSpeedCap;
                         //Debug.Log("Switch to COOLDOWN");
@@ -132,15 +132,15 @@ public class Dua : Player
             timerShadow = 0;
             if (Input.GetKey(leftKey) && !Input.GetKey(rightKey))
             {
-                rigidbody.velocity = Vector2.left * sprintSpeed;
+                GetComponent<Rigidbody2D>().velocity = Vector2.left * sprintSpeed;
             }
             else if (!Input.GetKey(leftKey) && Input.GetKey(rightKey))
             {
-                rigidbody.velocity = Vector2.right * sprintSpeed;
+                GetComponent<Rigidbody2D>().velocity = Vector2.right * sprintSpeed;
             }
             else
             {
-                rigidbody.velocity = facingRight ? Vector2.right * sprintSpeed : Vector2.left * sprintSpeed;
+                GetComponent<Rigidbody2D>().velocity = facingRight ? Vector2.right * sprintSpeed : Vector2.left * sprintSpeed;
             }
             timerDR = 0;
         }

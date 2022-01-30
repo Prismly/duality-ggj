@@ -12,7 +12,7 @@ public class LevelButton : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetFloat(levelKey));
+        //Debug.Log(PlayerPrefs.GetFloat(levelKey));
         if (PlayerPrefs.HasKey(levelKey))
         {
             bestTimeTextBox.GetComponent<Text>().text = secToString(PlayerPrefs.GetFloat(levelKey));
