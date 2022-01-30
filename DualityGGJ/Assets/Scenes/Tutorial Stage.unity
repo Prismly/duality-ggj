@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: 1119411142}
   - component: {fileID: 1119411141}
   - component: {fileID: 1119411143}
+  - component: {fileID: 1119411144}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -1320,6 +1321,22 @@ MonoBehaviour:
   goldTime: 5
   silverTime: 7
   bronzeTime: 10
+--- !u!114 &1119411144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119411139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fa4d9a523b06c43be850fcb07c3f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playingTut: 1
+  playingL1: 0
+  playingL2: 0
+  playingL3: 0
 --- !u!1 &1208313113
 GameObject:
   m_ObjectHideFlags: 0
@@ -18669,7 +18686,7 @@ Tilemap:
       - {fileID: -524390089, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
       - {fileID: -1911925433, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
       - {fileID: -1123209350, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
-      m_AnimationSpeed: 15
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: -2, z: 0}
@@ -18725,7 +18742,7 @@ Tilemap:
       - {fileID: -524390089, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
       - {fileID: -1911925433, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
       - {fileID: -1123209350, guid: 7a375674db1ac1e49a31fe5e45f36aad, type: 3}
-      m_AnimationSpeed: 15.000001
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 1, z: 0}
